@@ -5,6 +5,7 @@ const root = path.join(__dirname, '../');
 const app = express();
 // 루트 경로 미들웨어
 app.use(express.static(path.join(root)));
+app.use(express.static(path.join(root, 'dist')));
 // 최초 접속 요청 처리
 app.get('/', (req, res)=> {
   res.sendFile('index.html', {root : root});
